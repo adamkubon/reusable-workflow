@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_dispatch
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  ci-build:
+    name: BUILD
+    uses: adamkubon/reusable-workflow/.github/workflows/reusable-workflow.yaml@main
+    permissions:
+      actions: read
