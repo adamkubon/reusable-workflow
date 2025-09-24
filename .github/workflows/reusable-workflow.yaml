@@ -41,7 +41,7 @@ jobs:
       - name: Wait for job finish
         id: wait
         run:
-          sleep 20
+          sleep 300
 
       - name: Send Telemetry
         uses: paper2/github-actions-opentelemetry@main
