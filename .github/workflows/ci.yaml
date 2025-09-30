@@ -19,6 +19,8 @@ jobs:
       # cancels in-progress jobs on pull_request events only
       group: build
       cancel-in-progress: true
+    secrets:
+      API_KEY: ${{ secrets.API_KEY }}
     with:
       param1: ${{ inputs.param1 }}
 
@@ -28,6 +30,7 @@ jobs:
     needs: [build] # Wait for other jobs to complete
     if: always() # Run even if other jobs fail
     steps:
+
       - name: Wait for job finish
         id: wait
         run:
