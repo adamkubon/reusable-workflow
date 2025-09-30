@@ -16,7 +16,6 @@ jobs:
     permissions:
       actions: read
     with:
-      timeout: 60
       param1: ${{ inputs.param1 }}
 
   # Telemetry job runs after all other jobs complete
