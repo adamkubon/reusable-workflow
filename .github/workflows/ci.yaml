@@ -15,6 +15,10 @@ jobs:
     uses: adamkubon/reusable-workflow/.github/workflows/reusable-workflow.yaml@main
     permissions:
       actions: read
+    concurrency:
+      # cancels in-progress jobs on pull_request events only
+      group: build
+      cancel-in-progress: true
     with:
       param1: ${{ inputs.param1 }}
 
