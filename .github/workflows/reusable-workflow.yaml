@@ -26,6 +26,14 @@ jobs:
           show-progress: false
           persist-credentials: 'false'
 
+      - name: Repository checkout
+        id: checkout
+        uses: actions/checkout@v4.1.7
+        with:
+          fetch-depth: 0
+          show-progress: false
+          persist-credentials: 'false'
+
       - name: Build
         id: build
         shell: bash
